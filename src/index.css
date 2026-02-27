@@ -1,0 +1,40 @@
+﻿html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0a0a;
+}
+
+.resume-overlay {
+  max-width: min(84vw, 900px);
+  margin: 1rem auto 0;
+}
+
+.resume-overlay__line {
+  margin: 0.45rem 0;
+  font-size: clamp(0.72rem, 1.2vw, 0.95rem);
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+}
+
+.flow__title,
+.gravity__title {
+  top: 10%;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+@media (max-width: 720px) {
+  .resume-overlay__line {
+    font-size: 0.74rem;
+    line-height: 1.3;
+  }
+}

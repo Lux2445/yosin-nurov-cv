@@ -1,0 +1,461 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> Yosin Nurov - Resume Presentation </title>
+  <link rel="image_src" href="http://vaalentin.github.io/2015/app/public/img/preview.jpg" />
+  <meta name="description" content="Interactive resume presentation for Yosin Nurov - Middle Front-end Developer." />
+  <link rel="apple-touch-icon" sizes="57x57" href="./app/public/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./app/public/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./app/public/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./app/public/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./app/public/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./app/public/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./app/public/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./app/public/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./app/public/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="./app/public/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="./app/public/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="./app/public/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="./app/public/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="./app/public/favicons/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="msapplication-TileImage" content="./app/public/favicons/mstile-144x144.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .resume-copy {
+      margin-top: 14px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+      max-width: 780px;
+    }
+    .resume-copy--center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .resume-copy--left {
+      text-align: left;
+    }
+    .resume-copy--right {
+      text-align: right;
+      margin-left: auto;
+    }
+    .flow__title {
+      top: 10%;
+      left: 0;
+      width: 100%;
+      z-index: 4;
+    }
+    .gravity__title {
+      top: 7%;
+      left: 0;
+      width: 100%;
+      z-index: 4;
+    }
+    @media screen and (max-width: 900px) {
+      .resume-copy {
+        font-size: 10px;
+        line-height: 1.35;
+        max-width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <h3 class="text--center text--white loader__title is-active"> LOADING </h3>
+    <div class="loader__progress"></div>
+  </div>
+
+  <script type="text/javascript">
+    document = window.document;
+
+    (function () {
+      /* jshint strict: false */
+      /* jshint laxbreak: true */
+
+      // disable console
+      console.log('Resume source: https://github.com/vaalentin/2015');
+
+      if (!window.console) { window.console = {}; }
+      var methods = ['log', 'debug', 'warn', 'info'];
+      for (var i = 0; i < methods.length; i++){
+        console[methods[i]] = function () {};
+      }
+
+      // features
+      function mobile () {
+        return navigator.userAgent.match(/Android/i)
+          || navigator.userAgent.match(/webOS/i)
+          || navigator.userAgent.match(/iPhone/i)
+          || navigator.userAgent.match(/iPad/i)
+          || navigator.userAgent.match(/iPod/i)
+          || navigator.userAgent.match(/BlackBerry/i)
+          || navigator.userAgent.match(/Windows Phone/i);
+      }
+
+      function webGL () {
+        try {
+          var canvas = document.createElement('canvas'); 
+          return !! window.WebGLRenderingContext
+            && (canvas.getContext('webgl')
+            || canvas.getContext('experimental-webgl'));
+
+        } catch (e) {
+          return false;
+        }
+      }
+
+      var cssPayload = document.createElement('link');
+      cssPayload.rel = 'stylesheet';
+      cssPayload.type = 'text/css';
+
+      var jsPayload = document.createElement('script');
+      jsPayload.type = 'text/javascript';
+      jsPayload.async = jsPayload.defer = false;
+
+      var prefix;
+      if (webGL() && !mobile()) {
+        prefix = '3D';
+      } else {
+        prefix = '2D';
+      }
+
+      cssPayload.href = './app/dist/css/' + prefix + '/main.css';
+      jsPayload.src = './app/dist/js/' + prefix + '/bundle.js';
+
+      var head = document.getElementsByTagName('head')[0];
+
+      head.appendChild(cssPayload);
+      head.appendChild(jsPayload);
+    })();
+  </script>
+
+  <div class="help">
+    <div class="help__quit">
+      <svg xmln="http://www.w3.org/2000/svg" viewBox="0 0 25 20">
+        <line stroke="#ffffff"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          x1="5.8" y1="16.7" x2="19.2" y2="3.3"></line>
+        <line stroke="#ffffff"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          x1="5.8" y1="3.3" x2="19.2" y2="16.7"></line>
+      </svg>
+    </div>
+
+    <div class="slider">
+      <div class="slider__slides">
+        <div class="slider__slide">
+          <div class="slider__slide__content">
+            <div class="help__layout">
+              <div class="layout">
+                <div class="layout__mouse">
+                  <div class="layout__mouse__icon"></div>
+                  <div class="layout__mouse__click"></div>
+                </div>
+                <div class="layout__frame"></div>
+                <div class="layout__parts">
+                  <div class="layout__part"></div>
+                  <div class="layout__part"></div>
+                </div>
+              </div>
+            </div>
+            <p class="text--center text--white">
+              This presentation contains the complete resume. Navigate with scroll, trackpad, or keyboard arrows.
+            </p>
+          </div>
+        </div>
+
+        <div class="slider__slide">
+          <div class="slider__slide__content">
+            <div class="help__navigation">
+              <div class="mouse">
+                <div class="mouse__body">
+                  <div class="mouse__body__line"></div>
+                </div>
+                <div class="mouse__wheel">
+                  <div class="mouse__wheel__lines">
+                    <div class="mouse__wheel__line"></div>
+                    <div class="mouse__wheel__line"></div>
+                    <div class="mouse__wheel__line"></div>
+                    <div class="mouse__wheel__line"></div>
+                    <div class="mouse__wheel__line"></div>
+                    <div class="mouse__wheel__line"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="keys">
+                <div class="key key--left">
+                  <div class="key__triangle key__triangle--left"></div>
+                </div>
+                <div class="key key--bottom">
+                  <div class="key__triangle key__triangle--bottom"></div>
+                </div>
+                <div class="key key--top">
+                  <div class="key__triangle key__triangle--top"></div>
+                </div>
+                <div class="key key--right">
+                  <div class="key__triangle key__triangle--right"></div>
+                </div>
+              </div>
+            </div>
+            <p class="text--center text--white">
+              Use mouse wheel / trackpad / up-down keys to move through resume scenes.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slider__map"></div>
+    </div>
+  </div>
+
+  <div id="mobile-body">
+    <div class="heads">
+      <div class="menu">
+        <div class="menu__button">
+          <div class="menu__button__line menu__button__line--top"></div>
+          <div class="menu__button__line menu__button__line--middle"></div>
+          <div class="menu__button__line menu__button__line--bottom"></div>
+        </div>
+
+        <div class="menu__items">
+          <a class="menu__item menu__items--3D" data-button="sounds"> MUTE </a>
+          <a class="menu__item menu__items--3D" data-button="help"> HELP </a>
+          <a class="menu__item" href="mailto:yosinnurov2007@gmail.com"> CONTACT </a>
+          <a class="menu__item menu__items--3D" data-button="quality"> QUALITY 0.5 </a>
+        </div>
+      </div>
+
+      <div class="heads__viewport">
+        <div class="trigger__info trigger__info--arrow">
+          <svg xmln="http://www.w3.org/2000/svg" viewBox="0 0 25 20">
+            <path fill="none"
+              stroke="#ffffff"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.5,5L12.5 15 22.5 5"/>
+          </svg>
+        </div>
+
+        <div class="trigger__info trigger__info--heads">
+          <p class="trigger__info__text"> RESUME PRESENTATION </p>
+          <div class="trigger__info__bg trigger__info__bg--heads"></div>
+        </div>
+
+        <div class="trigger__info trigger__info--tails">
+          <p class="trigger__info__text"> SUMMARY </p>
+          <div class="trigger__info__bg trigger__info__bg--tails"></div>
+        </div>
+      </div>
+
+      <div class="heads__sections">
+        <div class="heads__section heads__section--hello">
+          <div class="part part--title hello__title">
+            <h1 class="text--white text--noMargin"> YOSIN NUROV </h1>
+            <h1 class="text--white text--noMargin"> RESUME PRESENTATION </h1>
+            <p class="resume-copy resume-copy--center">Middle Front-end Developer</p>
+            <p class="resume-copy resume-copy--center">Dushanbe, Tajikistan</p>
+            <p class="resume-copy resume-copy--center">JavaScript, TypeScript, React, React Native, Three.js</p>
+          </div>
+          <div class="part part--smoke"
+              data-0="transform:translate3d(0px, 0px, 0px)"
+              data-800="transform:translate3d(0px, -300px, 0px)"></div>
+        </div>
+
+        <div class="heads__section heads__section--beams">
+          <div class="part part--beam--left"
+              data-100="transform:translate3d(0px, 120px, 0px); opacity:0"
+              data-500="opacity:0.1"
+              data-1500="transform:translate3d(0px, 0px, 0px)"></div>
+          <div class="part part--beam--center"
+              data-0="transform:translate3d(0px, -10px, 0px); opacity:0"
+              data-600="opacity:1"
+              data-1600="transform:translate3d(0px, 0px, 0px)"></div>
+          <div class="part part--beam--right"
+              data-100="transform:translate3d(0px, 50px, 0px); opacity:0"
+              data-600="opacity:0.3"
+              data-1700="transform:translate3d(0px, -50px, 0px)"></div>
+        </div>
+
+        <div class="heads__section heads__section--drop">
+          <div class="part part--title drop__title"
+              data-1200="opacity:0"
+              data-1500="opacity:1">
+            <h1 class="text--white text--right text--noMargin"> PROFILE </h1>
+            <h1 class="text--white text--right text--noMargin"> PRODUCT + ENGINEERING </h1>
+            <p class="resume-copy resume-copy--right">Frontend developer with strong expertise in JavaScript, TypeScript, React, and React Native.</p>
+            <p class="resume-copy resume-copy--right">I build high-performance, scalable, and maintainable products with focus on UX and clean architecture.</p>
+            <p class="resume-copy resume-copy--right">I combine engineering rigor with product thinking and build interfaces that scale with business growth.</p>
+            <p class="resume-copy resume-copy--right">Background in freelance and teaching helps me explain complex technical decisions in clear business language.</p>
+          </div>
+          <div class="part part--drop"
+              data-1000="transform:translate3d(0px, 350px, 0px); opacity:0"
+              data-1700="transform:translate3d(0px, 0px, 0px); opacity:1"></div>
+        </div>
+
+        <div class="heads__section heads__section--ball">
+          <div class="part part--title ball__title"
+              data-1700="opacity:0"
+              data-2000="opacity:1">
+            <h1 class="text--white text--noMargin text--left"> 2+ YEARS </h1>
+            <h1 class="text--white text--noMargin text--left"> REACT + TYPESCRIPT </h1>
+            <p class="resume-copy resume-copy--left">Commercial experience: product web applications and cross-platform mobile delivery.</p>
+            <p class="resume-copy resume-copy--left">Cross-domain delivery: Web / Mobile / 3D.</p>
+          </div>
+          <div class="part part--sphere"
+              data-1400="transform:translate3d(0px, -300px, 0px) rotate(60deg); opacity:0"
+              data-2800="transform:translate3d(0px, 250px, 0px) rotate(0deg); opacity:1"></div>
+          <div class="part part--grid"
+              data-1500="transform:translate3d(0px, 300px, 0px); opacity:0"
+              data-2600="transform:translate3d(0px, -200px, 0px); opacity:1"></div>
+        </div>
+
+        <div class="heads__section heads__section--flow">
+          <div class="part part--title flow__title"
+              data-2200="opacity:0"
+              data-2800="opacity:1">
+            <h1 class="text--white text--noMargin"> FRONTEND + BACKEND </h1>
+            <h1 class="text--white text--noMargin"> TECHNOLOGIES </h1>
+            <p class="resume-copy resume-copy--center">Frontend: HTML5, CSS3, SASS/SCSS, JavaScript ES6+, TypeScript, React, React Native, Three.js.</p>
+            <p class="resume-copy resume-copy--center">Backend: Node.js, Express.js, Fastify, REST API, external service integration.</p>
+          </div>
+          <div class="part part--field"
+              data-2000="transform:translate3d(0px, 200px, 0px); opacity:0"
+              data-2700="transform:translate3d(0px, 0px, 0px); opacity:1"></div>
+          <div class="part part--neons"
+              data-2200="opacity:0"
+              data-3000="opacity:1"
+              data-3500="opacity:0"></div>
+          <div class="part part--smoke flow__smoke"
+              data-2200="transform:translate3d(0px, 400px, 0px); opacity:0"
+              data-3200="transform:translate3d(0px, 0px, 0px); opacity:1"></div>
+        </div>
+
+        <div class="heads__section heads__section--height">
+          <div class="part part--title height__title"
+              data-3500="opacity:0"
+              data-3800="opacity:1">
+            <h1 class="text--white text--right text--noMargin"> ENGINEERING </h1>
+            <h1 class="text--white text--right text--noMargin"> PRACTICE </h1>
+            <p class="resume-copy resume-copy--right">UI/UX, responsive and cross-browser layout, performance optimization, clean maintainable code, Agile/Scrum.</p>
+            <p class="resume-copy resume-copy--right">Tools: Git, GitHub, Figma, Photoshop, Graphic Design.</p>
+          </div>
+          <div class="part part--height"
+              data-3000="transform:translate3d(0px, 200px, 0px); opacity:0"
+              data-4000="transform:translate3d(0px, 0px, 0px); opacity:0.5"></div>
+        </div>
+
+        <div class="heads__section heads__section--face">
+          <div class="part part--title face__title"
+            data-3800="opacity:0"
+            data-5000="opacity:1">
+              <h1 class="text--white text--left text--noMargin"> FREELANCE </h1>
+              <h1 class="text--white text--left text--noMargin"> FRONTEND / FULL-STACK </h1>
+              <p class="resume-copy resume-copy--left">Jan 2025 - Present, Self-employed, Dushanbe.</p>
+              <p class="resume-copy resume-copy--left">Modern web apps with React, JavaScript, TypeScript.</p>
+              <p class="resume-copy resume-copy--left">Cross-platform mobile apps with React Native.</p>
+              <p class="resume-copy resume-copy--left">Backend services with Node.js (Express, Fastify) and REST APIs.</p>
+              <p class="resume-copy resume-copy--left">Interactive 3D experiences with Three.js and direct client delivery.</p>
+          </div>
+          <div class="part part--face"
+              data-4000="transform:translate3d(0px, 200px, 0px); opacity:0"
+              data-5500="transform:translate3d(0px, 0px, 0px); opacity:1"></div>
+        </div>
+
+        <div class="heads__section heads__section--rocks">
+          <div class="part part--title rocks__title"
+            data-5200="opacity:0"
+            data-5800="opacity:1">
+              <h1 class="text--white text--noMargin"> BABILON </h1>
+              <h1 class="text--white text--noMargin"> FRONT-END DEVELOPER </h1>
+              <p class="resume-copy resume-copy--center">Jan 2024 - Jul 2024, Dushanbe.</p>
+              <p class="resume-copy resume-copy--center">Developed and maintained product applications with React, JavaScript, and TypeScript.</p>
+              <p class="resume-copy resume-copy--center">Built responsive, user-friendly interfaces using HTML5 and CSS3.</p>
+              <p class="resume-copy resume-copy--center">Integrated frontend applications with REST APIs and internal services.</p>
+              <p class="resume-copy resume-copy--center">Improved performance, rendering speed, and UI/UX quality.</p>
+              <p class="resume-copy resume-copy--center">Contributed to internal and client-facing team projects.</p>
+          </div>
+          <div class="part part--rocks"
+              data-5000="transform:translate3d(0px, 200px, 0px);"
+              data-6000="transform:translate3d(0px, 100px, 0px);"></div>
+        </div>
+
+        <div class="heads__section heads__section--galaxy">
+          <div class="part part--title galaxy__title"
+            data-5900="opacity:0"
+            data-6500="opacity:1">
+              <h1 class="text--white text--noMargin"> TEACHING </h1>
+              <h1 class="text--white text--noMargin"> MENTORING </h1>
+              <p class="resume-copy resume-copy--center">Lecturer, Korvoni Umed (Dushanbe, date not specified): taught HTML, CSS, JavaScript from fundamentals to advanced topics.</p>
+              <p class="resume-copy resume-copy--center">Covered modern JavaScript: ES6+, async/await, API integration, and practical React architecture.</p>
+              <p class="resume-copy resume-copy--center">Prepared coursework, assignments, post-test assessments, and provided code review mentoring.</p>
+              <p class="resume-copy resume-copy--center">Guest Frontend Instructor, Alif Academy (2-day intensive, Dushanbe): HTML/CSS/JS workshop and DOM + ES6+ practice.</p>
+              <p class="resume-copy resume-copy--center">Guided hands-on coding sessions, technical feedback, and frontend architecture fundamentals.</p>
+          </div>
+          <div class="part part--galaxy"
+            data-5800="transform:translate3d(0px, -100px, 0px); opacity:0"
+            data-6800="transform:translate3d(0px, 0px, 0px); opacity:1"></div>
+        </div>
+
+        <div class="heads__section heads__section--gravity">
+          <div class="part part--title gravity__title"
+            data-6400="opacity:0"
+            data-7000="opacity:1">
+              <h1 class="text--white text--noMargin"> EDUCATION </h1>
+              <h1 class="text--white text--noMargin"> LANGUAGES / INTERESTS </h1>
+              <p class="resume-copy resume-copy--center">Bachelor's Degree (in progress) - Applied Informatics, Russian-Tajik Slavonic University (RTSU), Dushanbe (since 2025).</p>
+              <p class="resume-copy resume-copy--center">Faculty of Natural Sciences.</p>
+              <p class="resume-copy resume-copy--center">Computer Science and Programming - Alif Academy (2023, completed with honors).</p>
+              <p class="resume-copy resume-copy--center">Secondary Art Education - Aminzoda Art School, Dushanbe (2014-2024).</p>
+              <p class="resume-copy resume-copy--center">Art school background strengthens visual design decisions in UI/UX.</p>
+              <p class="resume-copy resume-copy--center">Languages: Russian, English, Tajik, Japanese.</p>
+              <p class="resume-copy resume-copy--center">Interests: graphic design, music (piano/guitar/violin), sports, fiction and science literature.</p>
+          </div>
+          <div class="part part--gravity"
+            data-6200="transform:translate3d(0px, 200px, 0px); opacity:0"
+            data-6800="transform:translate3d(0px, 0px, 0px); opacity:1"
+            ></div>
+        </div>
+
+        <div class="heads__section heads__section--end">
+          <div class="part part--title end__title"
+              data-7000="opacity:0"
+              data-7400="opacity:1">
+            <h1 class="text--white text--noMargin"> CONTACT </h1>
+            <h1 class="text--white text--noMargin"> LET'S BUILD PRODUCTS </h1>
+            <p class="resume-copy resume-copy--center">Open to product teams and projects where interface quality, engineering discipline, and delivery speed are critical.</p>
+            <p class="resume-copy resume-copy--center">Resume PDF: /Yosin_Nurov_Resume.pdf</p>
+            <p class="resume-copy resume-copy--center">Email: yosinnurov2007@gmail.com</p>
+            <p class="resume-copy resume-copy--center">Phone: +992 93 111 13 73</p>
+            <p class="resume-copy resume-copy--center">Location: Ayni 71/1 street, Dushanbe, Tajikistan</p>
+          </div>
+        </div>
+
+        <div class="part part--stars"></div>
+      </div>
+    </div>
+
+    <div class="tails">
+      <div class="tails__section tails__section--about">
+        <h1 class="tails__section__el"> PRESENTATION MODE </h1>
+        <div class="tails__section__el">
+          <p>All resume information is shown in the animated presentation scenes above.</p>
+          <p>Use the trigger to return to the presentation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="trigger"></div>
+  </div>
+</body>
+</html>
+
