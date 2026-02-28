@@ -128,15 +128,15 @@
       jsPayload.type = 'text/javascript';
       jsPayload.async = jsPayload.defer = false;
 
-      var prefix;
+      var mode;
       if (webGL() && !mobile()) {
-        prefix = '3D';
+        mode = '3d';
       } else {
-        prefix = '2D';
+        mode = '2d';
       }
 
-      cssPayload.href = './app/dist/css/' + prefix + '/main.css';
-      jsPayload.src = './app/dist/js/' + prefix + '/bundle.js';
+      cssPayload.href = './vaalentin/' + mode + '/main.css';
+      jsPayload.src = './vaalentin/' + mode + '/bundle.js';
 
       var head = document.getElementsByTagName('head')[0];
 
