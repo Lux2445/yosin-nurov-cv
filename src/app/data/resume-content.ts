@@ -104,11 +104,11 @@ export const resumeContent: Record<Locale, ResumeContent> = {
           location: 'Dushanbe',
           period: 'Янв 2025 — настоящее время',
           bullets: [
-            'Разрабатываю современные web-приложения на React, JavaScript и TypeScript.',
-            'Создаю кроссплатформенные мобильные приложения на React Native.',
-            'Проектирую backend-сервисы на Node.js (Express, Fastify) и REST API.',
-            'Интегрирую интерактивные 3D-сцены и визуализации на Three.js.',
-            'Работаю напрямую с клиентами: сбор требований, оценка, релиз и поддержка.',
+            'Разрабатывал современные web-приложения на React, JavaScript и TypeScript.',
+            'Создавал кроссплатформенные мобильные приложения на React Native.',
+            'Проектировал backend-сервисы на Node.js (Express, Fastify) и REST API.',
+            'Интегрировал интерактивные 3D-сцены и визуализации на Three.js.',
+            'Работал напрямую с клиентами: сбор требований, оценка, релиз и поддержка.',
           ],
         },
         {

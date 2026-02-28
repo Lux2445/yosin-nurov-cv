@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title> Yosin Nurov - Resume Presentation </title>
+  <title> Yosin Nurov Resume </title>
   <link rel="image_src" href="http://vaalentin.github.io/2015/app/public/img/preview.jpg" />
-  <meta name="description" content="Interactive resume presentation for Yosin Nurov - Middle Front-end Developer." />
+  <meta name="description" content="Interactive resume for Yosin Nurov (EN/RU)." />
   <link rel="apple-touch-icon" sizes="57x57" href="./app/public/favicons/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="114x114" href="./app/public/favicons/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon" sizes="72x72" href="./app/public/favicons/apple-touch-icon-72x72.png">
@@ -23,45 +23,55 @@
   <meta name="msapplication-TileImage" content="./app/public/favicons/mstile-144x144.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    .resume-copy {
-      margin-top: 14px;
-      color: #fff;
-      font-size: 12px;
-      line-height: 1.45;
-      letter-spacing: 0.04em;
-      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
-      max-width: 780px;
-    }
-    .resume-copy--center {
+    .resume-switch {
       text-align: center;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 20px 0;
     }
-    .resume-copy--left {
-      text-align: left;
+    .resume-switch__btn {
+      display: inline-block;
+      margin: 0 8px;
+      padding: 8px 12px;
+      border: 1px solid #111111;
+      background: transparent;
+      color: #111111;
+      cursor: pointer;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    .resume-copy--right {
-      text-align: right;
-      margin-left: auto;
+    .resume-switch__btn.is-active {
+      background: #111111;
+      color: #ffffff;
     }
-    .flow__title {
-      top: 10%;
-      left: 0;
-      width: 100%;
-      z-index: 4;
+    .resume-lang {
+      display: none;
     }
-    .gravity__title {
-      top: 7%;
-      left: 0;
-      width: 100%;
-      z-index: 4;
+    .resume-lang.is-active {
+      display: block;
     }
-    @media screen and (max-width: 900px) {
-      .resume-copy {
-        font-size: 10px;
-        line-height: 1.35;
-        max-width: 90vw;
-      }
+    .resume-block-title {
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-size: 22px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .resume-subtitle {
+      margin-top: 14px;
+      margin-bottom: 8px;
+      font-size: 15px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .resume-list {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+    .resume-list li {
+      margin: 4px 0;
+    }
+    .resume-meta {
+      opacity: 0.75;
     }
   </style>
 </head>
@@ -79,7 +89,7 @@
       /* jshint laxbreak: true */
 
       // disable console
-      console.log('Resume source: https://github.com/vaalentin/2015');
+      console.log('That\'s probably what you\'re looking for! https://github.com/vaalentin/2015');
 
       if (!window.console) { window.console = {}; }
       var methods = ['log', 'debug', 'warn', 'info'];
@@ -169,7 +179,7 @@
               </div>
             </div>
             <p class="text--center text--white">
-              This presentation contains the complete resume. Navigate with scroll, trackpad, or keyboard arrows.
+              There&apos;re 2 parts on the website. Presentation and About me, you can switch between them anytime by clicking on the bottom and top part of the screen.
             </p>
           </div>
         </div>
@@ -208,7 +218,7 @@
               </div>
             </div>
             <p class="text--center text--white">
-              Use mouse wheel / trackpad / up-down keys to move through resume scenes.
+              You can naviguate with either your mouse wheel / trackpad or up / down keys.
             </p>
           </div>
         </div>
@@ -230,7 +240,7 @@
           <a class="menu__item menu__items--3D" data-button="sounds"> MUTE </a>
           <a class="menu__item menu__items--3D" data-button="help"> HELP </a>
           <a class="menu__item" href="mailto:yosinnurov2007@gmail.com"> CONTACT </a>
-          <a class="menu__item menu__items--3D" data-button="quality"> QUALITY 0.5 </a>
+          <!-- <a class="menu__item menu__items--3D" data-button="quality"> QUALITY 0.5 </a> -->
         </div>
       </div>
 
@@ -247,12 +257,12 @@
         </div>
 
         <div class="trigger__info trigger__info--heads">
-          <p class="trigger__info__text"> RESUME PRESENTATION </p>
+          <p class="trigger__info__text"> BACK TO THE PRESENTATION </p>
           <div class="trigger__info__bg trigger__info__bg--heads"></div>
         </div>
 
         <div class="trigger__info trigger__info--tails">
-          <p class="trigger__info__text"> SUMMARY </p>
+          <p class="trigger__info__text"> RESUME </p>
           <div class="trigger__info__bg trigger__info__bg--tails"></div>
         </div>
       </div>
@@ -260,11 +270,8 @@
       <div class="heads__sections">
         <div class="heads__section heads__section--hello">
           <div class="part part--title hello__title">
-            <h1 class="text--white text--noMargin"> YOSIN NUROV </h1>
-            <h1 class="text--white text--noMargin"> RESUME PRESENTATION </h1>
-            <p class="resume-copy resume-copy--center">Middle Front-end Developer</p>
-            <p class="resume-copy resume-copy--center">Dushanbe, Tajikistan</p>
-            <p class="resume-copy resume-copy--center">JavaScript, TypeScript, React, React Native, Three.js</p>
+            <h1 class="text--white text--noMargin"> HELO</h1>
+            <h1 class="text--white text--noMargin"> <span class="placeholder--agency placeholder--agency--capital"></span> </h1>
           </div>
           <div class="part part--smoke"
               data-0="transform:translate3d(0px, 0px, 0px)"
@@ -290,12 +297,9 @@
           <div class="part part--title drop__title"
               data-1200="opacity:0"
               data-1500="opacity:1">
-            <h1 class="text--white text--right text--noMargin"> PROFILE </h1>
-            <h1 class="text--white text--right text--noMargin"> PRODUCT + ENGINEERING </h1>
-            <p class="resume-copy resume-copy--right">Frontend developer with strong expertise in JavaScript, TypeScript, React, and React Native.</p>
-            <p class="resume-copy resume-copy--right">I build high-performance, scalable, and maintainable products with focus on UX and clean architecture.</p>
-            <p class="resume-copy resume-copy--right">I combine engineering rigor with product thinking and build interfaces that scale with business growth.</p>
-            <p class="resume-copy resume-copy--right">Background in freelance and teaching helps me explain complex technical decisions in clear business language.</p>
+            <h1 class="text--white text--right text--noMargin"> FROM </h1>
+            <h1 class="text--white text--right text--noMargin"> AN IDEA </h1>
+            </h1>
           </div>
           <div class="part part--drop"
               data-1000="transform:translate3d(0px, 350px, 0px); opacity:0"
@@ -306,10 +310,8 @@
           <div class="part part--title ball__title"
               data-1700="opacity:0"
               data-2000="opacity:1">
-            <h1 class="text--white text--noMargin text--left"> 2+ YEARS </h1>
-            <h1 class="text--white text--noMargin text--left"> REACT + TYPESCRIPT </h1>
-            <p class="resume-copy resume-copy--left">Commercial experience: product web applications and cross-platform mobile delivery.</p>
-            <p class="resume-copy resume-copy--left">Cross-domain delivery: Web / Mobile / 3D.</p>
+            <h1 class="text--white text--noMargin text--left"> GIVE </h1>
+            <h1 class="text--white text--noMargin text--left"> SHAPE </h1>
           </div>
           <div class="part part--sphere"
               data-1400="transform:translate3d(0px, -300px, 0px) rotate(60deg); opacity:0"
@@ -320,14 +322,6 @@
         </div>
 
         <div class="heads__section heads__section--flow">
-          <div class="part part--title flow__title"
-              data-2200="opacity:0"
-              data-2800="opacity:1">
-            <h1 class="text--white text--noMargin"> FRONTEND + BACKEND </h1>
-            <h1 class="text--white text--noMargin"> TECHNOLOGIES </h1>
-            <p class="resume-copy resume-copy--center">Frontend: HTML5, CSS3, SASS/SCSS, JavaScript ES6+, TypeScript, React, React Native, Three.js.</p>
-            <p class="resume-copy resume-copy--center">Backend: Node.js, Express.js, Fastify, REST API, external service integration.</p>
-          </div>
           <div class="part part--field"
               data-2000="transform:translate3d(0px, 200px, 0px); opacity:0"
               data-2700="transform:translate3d(0px, 0px, 0px); opacity:1"></div>
@@ -344,10 +338,8 @@
           <div class="part part--title height__title"
               data-3500="opacity:0"
               data-3800="opacity:1">
-            <h1 class="text--white text--right text--noMargin"> ENGINEERING </h1>
-            <h1 class="text--white text--right text--noMargin"> PRACTICE </h1>
-            <p class="resume-copy resume-copy--right">UI/UX, responsive and cross-browser layout, performance optimization, clean maintainable code, Agile/Scrum.</p>
-            <p class="resume-copy resume-copy--right">Tools: Git, GitHub, Figma, Photoshop, Graphic Design.</p>
+            <h1 class="text--white text--right text--noMargin"> LET IT JK</h1>
+            <h1 class="text--white text--right text--noMargin"> MORPH </h1>
           </div>
           <div class="part part--height"
               data-3000="transform:translate3d(0px, 200px, 0px); opacity:0"
@@ -358,13 +350,8 @@
           <div class="part part--title face__title"
             data-3800="opacity:0"
             data-5000="opacity:1">
-              <h1 class="text--white text--left text--noMargin"> FREELANCE </h1>
-              <h1 class="text--white text--left text--noMargin"> FRONTEND / FULL-STACK </h1>
-              <p class="resume-copy resume-copy--left">Jan 2025 - Present, Self-employed, Dushanbe.</p>
-              <p class="resume-copy resume-copy--left">Modern web apps with React, JavaScript, TypeScript.</p>
-              <p class="resume-copy resume-copy--left">Cross-platform mobile apps with React Native.</p>
-              <p class="resume-copy resume-copy--left">Backend services with Node.js (Express, Fastify) and REST APIs.</p>
-              <p class="resume-copy resume-copy--left">Interactive 3D experiences with Three.js and direct client delivery.</p>
+              <h1 class="text--white text--left text--noMargin"> KEEP </h1>
+              <h1 class="text--white text--left text--noMargin"> TRYING </h1>
           </div>
           <div class="part part--face"
               data-4000="transform:translate3d(0px, 200px, 0px); opacity:0"
@@ -375,14 +362,8 @@
           <div class="part part--title rocks__title"
             data-5200="opacity:0"
             data-5800="opacity:1">
-              <h1 class="text--white text--noMargin"> BABILON </h1>
-              <h1 class="text--white text--noMargin"> FRONT-END DEVELOPER </h1>
-              <p class="resume-copy resume-copy--center">Jan 2024 - Jul 2024, Dushanbe.</p>
-              <p class="resume-copy resume-copy--center">Developed and maintained product applications with React, JavaScript, and TypeScript.</p>
-              <p class="resume-copy resume-copy--center">Built responsive, user-friendly interfaces using HTML5 and CSS3.</p>
-              <p class="resume-copy resume-copy--center">Integrated frontend applications with REST APIs and internal services.</p>
-              <p class="resume-copy resume-copy--center">Improved performance, rendering speed, and UI/UX quality.</p>
-              <p class="resume-copy resume-copy--center">Contributed to internal and client-facing team projects.</p>
+              <h1 class="text--white text--noMargin"> KEEP </h1>
+              <h1 class="text--white text--noMargin"> LEARNING </h1>
           </div>
           <div class="part part--rocks"
               data-5000="transform:translate3d(0px, 200px, 0px);"
@@ -393,13 +374,8 @@
           <div class="part part--title galaxy__title"
             data-5900="opacity:0"
             data-6500="opacity:1">
-              <h1 class="text--white text--noMargin"> TEACHING </h1>
-              <h1 class="text--white text--noMargin"> MENTORING </h1>
-              <p class="resume-copy resume-copy--center">Lecturer, Korvoni Umed (Dushanbe, date not specified): taught HTML, CSS, JavaScript from fundamentals to advanced topics.</p>
-              <p class="resume-copy resume-copy--center">Covered modern JavaScript: ES6+, async/await, API integration, and practical React architecture.</p>
-              <p class="resume-copy resume-copy--center">Prepared coursework, assignments, post-test assessments, and provided code review mentoring.</p>
-              <p class="resume-copy resume-copy--center">Guest Frontend Instructor, Alif Academy (2-day intensive, Dushanbe): HTML/CSS/JS workshop and DOM + ES6+ practice.</p>
-              <p class="resume-copy resume-copy--center">Guided hands-on coding sessions, technical feedback, and frontend architecture fundamentals.</p>
+              <h1 class="text--white text--noMargin"> WORK </h1>
+              <h1 class="text--white text--noMargin"> AS A TEAM </h1>
           </div>
           <div class="part part--galaxy"
             data-5800="transform:translate3d(0px, -100px, 0px); opacity:0"
@@ -407,19 +383,6 @@
         </div>
 
         <div class="heads__section heads__section--gravity">
-          <div class="part part--title gravity__title"
-            data-6400="opacity:0"
-            data-7000="opacity:1">
-              <h1 class="text--white text--noMargin"> EDUCATION </h1>
-              <h1 class="text--white text--noMargin"> LANGUAGES / INTERESTS </h1>
-              <p class="resume-copy resume-copy--center">Bachelor's Degree (in progress) - Applied Informatics, Russian-Tajik Slavonic University (RTSU), Dushanbe (since 2025).</p>
-              <p class="resume-copy resume-copy--center">Faculty of Natural Sciences.</p>
-              <p class="resume-copy resume-copy--center">Computer Science and Programming - Alif Academy (2023, completed with honors).</p>
-              <p class="resume-copy resume-copy--center">Secondary Art Education - Aminzoda Art School, Dushanbe (2014-2024).</p>
-              <p class="resume-copy resume-copy--center">Art school background strengthens visual design decisions in UI/UX.</p>
-              <p class="resume-copy resume-copy--center">Languages: Russian, English, Tajik, Japanese.</p>
-              <p class="resume-copy resume-copy--center">Interests: graphic design, music (piano/guitar/violin), sports, fiction and science literature.</p>
-          </div>
           <div class="part part--gravity"
             data-6200="transform:translate3d(0px, 200px, 0px); opacity:0"
             data-6800="transform:translate3d(0px, 0px, 0px); opacity:1"
@@ -430,13 +393,8 @@
           <div class="part part--title end__title"
               data-7000="opacity:0"
               data-7400="opacity:1">
-            <h1 class="text--white text--noMargin"> CONTACT </h1>
-            <h1 class="text--white text--noMargin"> LET'S BUILD PRODUCTS </h1>
-            <p class="resume-copy resume-copy--center">Open to product teams and projects where interface quality, engineering discipline, and delivery speed are critical.</p>
-            <p class="resume-copy resume-copy--center">Resume PDF: /Yosin_Nurov_Resume.pdf</p>
-            <p class="resume-copy resume-copy--center">Email: yosinnurov2007@gmail.com</p>
-            <p class="resume-copy resume-copy--center">Phone: +992 93 111 13 73</p>
-            <p class="resume-copy resume-copy--center">Location: Ayni 71/1 street, Dushanbe, Tajikistan</p>
+            <h1 class="text--white text--noMargin"> THANKS FOR </h1>
+            <h1 class="text--white text--noMargin"> WATCHING </h1>
           </div>
         </div>
 
@@ -446,16 +404,185 @@
 
     <div class="tails">
       <div class="tails__section tails__section--about">
-        <h1 class="tails__section__el"> PRESENTATION MODE </h1>
-        <div class="tails__section__el">
-          <p>All resume information is shown in the animated presentation scenes above.</p>
-          <p>Use the trigger to return to the presentation.</p>
+        <h1 class="tails__section__el"> YOSIN NUROV RESUME </h1>
+
+        <div class="tails__section__el resume-switch">
+          <button id="resume-lang-en" class="resume-switch__btn is-active" type="button">English</button>
+          <button id="resume-lang-ru" class="resume-switch__btn" type="button">Русский</button>
+        </div>
+
+        <div id="resume-content-en" class="tails__section__el resume-lang is-active">
+          <h2 class="resume-block-title">Profile</h2>
+          <p><strong>Middle Front-end Developer</strong> — Dushanbe, Tajikistan</p>
+          <p>Frontend developer with strong expertise in JavaScript, TypeScript, React, and React Native. I build high-performance, scalable, and maintainable products with a clear focus on UX and clean architecture.</p>
+
+          <h2 class="resume-block-title">Technology Stack</h2>
+          <h3 class="resume-subtitle">Frontend</h3>
+          <p>HTML5, CSS3, SASS / SCSS, JavaScript (ES6+), TypeScript, React, React Native, Three.js</p>
+          <h3 class="resume-subtitle">Backend</h3>
+          <p>Node.js, Express.js, Fastify, REST API, Service integration</p>
+          <h3 class="resume-subtitle">Engineering Practice</h3>
+          <p>UI/UX, Responsive and cross-browser layout, Performance optimization, Clean and maintainable code, Agile / Scrum</p>
+          <h3 class="resume-subtitle">Tools</h3>
+          <p>Git, GitHub, Figma, Photoshop, Graphic design</p>
+
+          <h2 class="resume-block-title">Work Experience</h2>
+          <h3 class="resume-subtitle">Freelance Frontend / Full-Stack Developer — Self-employed</h3>
+          <p class="resume-meta">Dushanbe | Jan 2025 — Present</p>
+          <ul class="resume-list">
+            <li>Develop modern web applications with React, JavaScript, and TypeScript.</li>
+            <li>Build cross-platform mobile apps with React Native.</li>
+            <li>Design backend services with Node.js (Express, Fastify) and REST APIs.</li>
+            <li>Implement interactive 3D experiences with Three.js.</li>
+            <li>Work directly with clients: requirements, planning, delivery, and support.</li>
+          </ul>
+
+          <h3 class="resume-subtitle">Front-end Developer — Babilon</h3>
+          <p class="resume-meta">Dushanbe | Jan 2024 — Jul 2024</p>
+          <ul class="resume-list">
+            <li>Developed and maintained modern applications using React, JavaScript, and TypeScript.</li>
+            <li>Built responsive, user-friendly interfaces with HTML5 and CSS3.</li>
+            <li>Integrated frontend applications with REST APIs.</li>
+            <li>Improved application performance and UI/UX quality.</li>
+            <li>Contributed to internal and client-facing team projects.</li>
+          </ul>
+
+          <h3 class="resume-subtitle">Lecturer — Korvoni Umed</h3>
+          <p class="resume-meta">Dushanbe | Date not specified</p>
+          <ul class="resume-list">
+            <li>Taught HTML, CSS, and JavaScript from fundamentals to advanced topics.</li>
+            <li>Covered modern JavaScript concepts: ES6+, async/await, API integration.</li>
+            <li>Delivered practical React training and mentored project work.</li>
+            <li>Prepared coursework, assignments, and post-test assessments.</li>
+            <li>Provided code reviews and technical guidance.</li>
+          </ul>
+
+          <h3 class="resume-subtitle">Guest Frontend Instructor (2-Day Intensive) — Alif Academy</h3>
+          <p class="resume-meta">Dushanbe | 2-day workshop</p>
+          <ul class="resume-list">
+            <li>Delivered an intensive workshop on HTML, CSS, and JavaScript.</li>
+            <li>Introduced DOM manipulation and modern ES6+ concepts.</li>
+            <li>Guided hands-on coding sessions and provided technical feedback.</li>
+            <li>Explained frontend architecture fundamentals.</li>
+          </ul>
+
+          <h2 class="resume-block-title">Education</h2>
+          <ul class="resume-list">
+            <li><strong>Bachelor's Degree (in progress) — Applied Informatics</strong>, Russian-Tajik Slavonic University (RTSU), Dushanbe — Since 2025.</li>
+            <li><strong>Computer Science and Programming</strong>, Alif Academy — 2023 (completed with honors).</li>
+            <li><strong>Secondary Art Education</strong>, Aminzoda Art School, Dushanbe — 2014 — 2024.</li>
+          </ul>
+
+          <h2 class="resume-block-title">Languages & Interests</h2>
+          <p><strong>Languages:</strong> Russian, English, Tajik, Japanese</p>
+          <p><strong>Interests:</strong> Graphic design and digital illustration, music (piano, guitar, violin), sports (basketball, volleyball, cycling), fiction and scientific literature</p>
+
+          <h2 class="resume-block-title">Contact</h2>
+          <p>Open to product teams and projects where interface quality, engineering discipline, and delivery speed are critical.</p>
+          <p>Email: <a class="tails__link" href="mailto:yosinnurov2007@gmail.com">yosinnurov2007@gmail.com</a></p>
+          <p>Phone: <a class="tails__link" href="tel:+992931111373">+992 93 111 13 73</a></p>
+          <p>Location: Ayni 71/1 street, Dushanbe, Tajikistan</p>
+        </div>
+
+        <div id="resume-content-ru" class="tails__section__el resume-lang">
+          <h2 class="resume-block-title">Профиль</h2>
+          <p><strong>Middle Front-end Developer</strong> — Душанбе, Таджикистан</p>
+          <p>Frontend-разработчик с сильной экспертизой в JavaScript, TypeScript, React и React Native. Проектирую быстрые, масштабируемые и поддерживаемые продукты с фокусом на UX, производительность и инженерное качество.</p>
+
+          <h2 class="resume-block-title">Технологии</h2>
+          <h3 class="resume-subtitle">Frontend</h3>
+          <p>HTML5, CSS3, SASS / SCSS, JavaScript (ES6+), TypeScript, React, React Native, Three.js</p>
+          <h3 class="resume-subtitle">Backend</h3>
+          <p>Node.js, Express.js, Fastify, REST API, Интеграция внешних сервисов</p>
+          <h3 class="resume-subtitle">Инженерные практики</h3>
+          <p>UI/UX, Адаптивная и кросс-браузерная верстка, Оптимизация производительности, Чистый и поддерживаемый код, Agile / Scrum</p>
+          <h3 class="resume-subtitle">Инструменты</h3>
+          <p>Git, GitHub, Figma, Photoshop, Graphic Design</p>
+
+          <h2 class="resume-block-title">Опыт работы</h2>
+          <h3 class="resume-subtitle">Freelance Frontend / Full-Stack Developer — Self-employed</h3>
+          <p class="resume-meta">Душанбе | Янв 2025 — настоящее время</p>
+          <ul class="resume-list">
+            <li>Разрабатываю современные web-приложения на React, JavaScript и TypeScript.</li>
+            <li>Создаю кроссплатформенные мобильные приложения на React Native.</li>
+            <li>Проектирую backend-сервисы на Node.js (Express, Fastify) и REST API.</li>
+            <li>Интегрирую интерактивные 3D-сцены и визуализации на Three.js.</li>
+            <li>Работаю напрямую с клиентами: сбор требований, оценка, релиз и поддержка.</li>
+          </ul>
+
+          <h3 class="resume-subtitle">Front-end Developer — Babilon</h3>
+          <p class="resume-meta">Душанбе | Янв 2024 — Июл 2024</p>
+          <ul class="resume-list">
+            <li>Развивал и поддерживал продуктовые приложения на React, JavaScript и TypeScript.</li>
+            <li>Реализовывал адаптивные интерфейсы на HTML5 и CSS3 с упором на UX.</li>
+            <li>Интегрировал frontend с REST API и внутренними сервисами компании.</li>
+            <li>Улучшал производительность интерфейсов и скорость рендеринга страниц.</li>
+            <li>Участвовал в командной поставке внутренних и клиентских проектов.</li>
+          </ul>
+
+          <h3 class="resume-subtitle">Lecturer — Korvoni Umed</h3>
+          <p class="resume-meta">Душанбе | Период не указан</p>
+          <ul class="resume-list">
+            <li>Преподавал HTML, CSS и JavaScript от базовых тем до продвинутых практик.</li>
+            <li>Объяснял современный JavaScript: ES6+, async/await, API integration.</li>
+            <li>Проводил практические занятия по React и архитектуре интерфейсов.</li>
+            <li>Готовил учебные материалы, задания и итоговые тесты.</li>
+            <li>Проводил code review и техническое менторство студентов.</li>
+          </ul>
+
+          <h3 class="resume-subtitle">Guest Frontend Instructor (2-Day Intensive) — Alif Academy</h3>
+          <p class="resume-meta">Душанбе | 2-дневный интенсив</p>
+          <ul class="resume-list">
+            <li>Провел интенсив по HTML, CSS и JavaScript для начинающих разработчиков.</li>
+            <li>Разобрал DOM-манипуляции и современные возможности ES6+.</li>
+            <li>Сопровождал практические coding-сессии и давал технический фидбек.</li>
+            <li>Вводил студентов в основы frontend-архитектуры и инженерных подходов.</li>
+          </ul>
+
+          <h2 class="resume-block-title">Образование</h2>
+          <ul class="resume-list">
+            <li><strong>Bachelor (в процессе) — Applied Informatics</strong>, Russian-Tajik Slavonic University (RTSU), Dushanbe — с 2025.</li>
+            <li><strong>Computer Science and Programming</strong>, Alif Academy — 2023 (с отличием).</li>
+            <li><strong>Secondary Art Education</strong>, Aminzoda Art School, Dushanbe — 2014 — 2024.</li>
+          </ul>
+
+          <h2 class="resume-block-title">Языки и интересы</h2>
+          <p><strong>Языки:</strong> Русский, Английский, Таджикский, Японский</p>
+          <p><strong>Интересы:</strong> Графический дизайн и digital-иллюстрация, музыка (фортепиано, гитара, скрипка), спорт (баскетбол, волейбол, велоспорт), художественная и научная литература</p>
+
+          <h2 class="resume-block-title">Контакты</h2>
+          <p>Открыт к сотрудничеству в продуктовых командах и проектах, где важны качество интерфейсов, инженерная дисциплина и скорость доставки.</p>
+          <p>Email: <a class="tails__link" href="mailto:yosinnurov2007@gmail.com">yosinnurov2007@gmail.com</a></p>
+          <p>Телефон: <a class="tails__link" href="tel:+992931111373">+992 93 111 13 73</a></p>
+          <p>Локация: Ayni 71/1 street, Dushanbe, Tajikistan</p>
         </div>
       </div>
     </div>
 
     <div class="trigger"></div>
   </div>
+  <script type="text/javascript">
+    (function () {
+      var enBtn = document.getElementById('resume-lang-en');
+      var ruBtn = document.getElementById('resume-lang-ru');
+      var enContent = document.getElementById('resume-content-en');
+      var ruContent = document.getElementById('resume-content-ru');
+
+      if (!enBtn || !ruBtn || !enContent || !ruContent) {
+        return;
+      }
+
+      function setLang(lang) {
+        var en = lang === 'en';
+        enBtn.classList.toggle('is-active', en);
+        ruBtn.classList.toggle('is-active', !en);
+        enContent.classList.toggle('is-active', en);
+        ruContent.classList.toggle('is-active', !en);
+      }
+
+      enBtn.addEventListener('click', function () { setLang('en'); });
+      ruBtn.addEventListener('click', function () { setLang('ru'); });
+    })();
+  </script>
 </body>
 </html>
-

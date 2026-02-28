@@ -221,28 +221,28 @@ export default function App() {
               <div
                 className="part part--smoke"
                 data-0="transform:translate3d(0px, 0px, 0px)"
-                data-800="transform:translate3d(0px, -300px, 0px)"
+                data-800="transform:translate3d(0px, -380px, 0px)"
               />
             </div>
 
             <div className="heads__section heads__section--beams">
               <div
                 className="part part--beam--left"
-                data-100="transform:translate3d(0px, 120px, 0px); opacity:0"
-                data-500="opacity:0.1"
-                data-1500="transform:translate3d(0px, 0px, 0px)"
+                data-100="transform:translate3d(0px, 170px, 0px); opacity:0"
+                data-500="opacity:0.2"
+                data-1500="transform:translate3d(-25px, -8px, 0px)"
               />
               <div
                 className="part part--beam--center"
-                data-0="transform:translate3d(0px, -10px, 0px); opacity:0"
-                data-600="opacity:1"
-                data-1600="transform:translate3d(0px, 0px, 0px)"
+                data-0="transform:translate3d(0px, -60px, 0px); opacity:0"
+                data-600="opacity:0.9"
+                data-1600="transform:translate3d(0px, 28px, 0px)"
               />
               <div
                 className="part part--beam--right"
-                data-100="transform:translate3d(0px, 50px, 0px); opacity:0"
-                data-600="opacity:0.3"
-                data-1700="transform:translate3d(0px, -50px, 0px)"
+                data-100="transform:translate3d(0px, 90px, 0px); opacity:0"
+                data-600="opacity:0.45"
+                data-1700="transform:translate3d(0px, -85px, 0px)"
               />
             </div>
 
@@ -256,8 +256,8 @@ export default function App() {
               />
               <div
                 className="part part--drop"
-                data-1000="transform:translate3d(0px, 350px, 0px); opacity:0"
-                data-1700="transform:translate3d(0px, 0px, 0px); opacity:1"
+                data-1000="transform:translate3d(0px, 420px, 0px); opacity:0"
+                data-1700="transform:translate3d(0px, 10px, 0px); opacity:1"
               />
             </div>
 
@@ -275,32 +275,32 @@ export default function App() {
               />
               <div
                 className="part part--sphere"
-                data-1400="transform:translate3d(0px, -300px, 0px) rotate(60deg); opacity:0"
-                data-2800="transform:translate3d(0px, 250px, 0px) rotate(0deg); opacity:1"
+                data-1400="transform:translate3d(0px, -380px, 0px) rotate(-40deg); opacity:0"
+                data-2800="transform:translate3d(0px, 220px, 0px) rotate(35deg); opacity:1"
               />
               <div
                 className="part part--grid"
-                data-1500="transform:translate3d(0px, 300px, 0px); opacity:0"
-                data-2600="transform:translate3d(0px, -200px, 0px); opacity:1"
+                data-1500="transform:translate3d(0px, 360px, 0px); opacity:0"
+                data-2600="transform:translate3d(0px, -140px, 0px); opacity:1"
               />
             </div>
 
             <div className="heads__section heads__section--flow">
               <div
                 className="part part--field"
-                data-2000="transform:translate3d(0px, 200px, 0px); opacity:0"
-                data-2700="transform:translate3d(0px, 0px, 0px); opacity:1"
+                data-2000="transform:translate3d(0px, 260px, 0px); opacity:0"
+                data-2700="transform:translate3d(0px, -20px, 0px); opacity:1"
               />
               <div
                 className="part part--neons"
                 data-2200="opacity:0"
-                data-3000="opacity:1"
-                data-3500="opacity:0"
+                data-3000="opacity:0.82"
+                data-3500="opacity:0.18"
               />
               <div
                 className="part part--smoke flow__smoke"
-                data-2200="transform:translate3d(0px, 400px, 0px); opacity:0"
-                data-3200="transform:translate3d(0px, 0px, 0px); opacity:1"
+                data-2200="transform:translate3d(0px, 460px, 0px); opacity:0"
+                data-3200="transform:translate3d(0px, -40px, 0px); opacity:0.9"
               />
               <TitleBlock
                 className="part part--title flow__title"
@@ -326,8 +326,8 @@ export default function App() {
               />
               <div
                 className="part part--height"
-                data-3000="transform:translate3d(0px, 200px, 0px); opacity:0"
-                data-4000="transform:translate3d(0px, 0px, 0px); opacity:0.5"
+                data-3000="transform:translate3d(0px, 260px, 0px); opacity:0"
+                data-4000="transform:translate3d(0px, -20px, 0px); opacity:0.38"
               />
             </div>
 
@@ -348,8 +348,8 @@ export default function App() {
               />
               <div
                 className="part part--face"
-                data-4000="transform:translate3d(0px, 200px, 0px); opacity:0"
-                data-5500="transform:translate3d(0px, 0px, 0px); opacity:1"
+                data-4000="transform:translate3d(0px, 240px, 0px); opacity:0"
+                data-5500="transform:translate3d(0px, -25px, 0px); opacity:1"
               />
             </div>
 
@@ -369,8 +369,8 @@ export default function App() {
               />
               <div
                 className="part part--rocks"
-                data-5000="transform:translate3d(0px, 200px, 0px);"
-                data-6000="transform:translate3d(0px, 100px, 0px);"
+                data-5000="transform:translate3d(0px, 240px, 0px);"
+                data-6000="transform:translate3d(0px, 70px, 0px);"
               />
             </div>
 
@@ -396,16 +396,16 @@ export default function App() {
               />
               <div
                 className="part part--galaxy"
-                data-5800="transform:translate3d(0px, -100px, 0px); opacity:0"
-                data-6800="transform:translate3d(0px, 0px, 0px); opacity:1"
+                data-5800="transform:translate3d(0px, -160px, 0px); opacity:0"
+                data-6800="transform:translate3d(0px, 30px, 0px); opacity:1"
               />
             </div>
 
             <div className="heads__section heads__section--gravity">
               <div
                 className="part part--gravity"
-                data-6200="transform:translate3d(0px, 200px, 0px); opacity:0"
-                data-6800="transform:translate3d(0px, 0px, 0px); opacity:1"
+                data-6200="transform:translate3d(0px, 260px, 0px); opacity:0"
+                data-6800="transform:translate3d(0px, -20px, 0px); opacity:0.9"
               />
               <TitleBlock
                 className="part part--title gravity__title"
