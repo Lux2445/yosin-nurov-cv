@@ -129,14 +129,24 @@
       jsPayload.async = jsPayload.defer = false;
 
       var mode;
+      var modeLegacy;
+      var isLocalHost = window.location.hostname === 'localhost'
+        || window.location.hostname === '127.0.0.1';
       if (webGL() && !mobile()) {
         mode = '3d';
+        modeLegacy = '3D';
       } else {
         mode = '2d';
+        modeLegacy = '2D';
       }
 
-      cssPayload.href = './vaalentin/' + mode + '/main.css';
-      jsPayload.src = './vaalentin/' + mode + '/bundle.js';
+      if (isLocalHost) {
+        cssPayload.href = './app/dist/css/' + modeLegacy + '/main.css';
+        jsPayload.src = './app/dist/js/' + modeLegacy + '/bundle.js';
+      } else {
+        cssPayload.href = './presentation-runtime/' + mode + '/main.css';
+        jsPayload.src = './presentation-runtime/' + mode + '/bundle.js';
+      }
 
       var head = document.getElementsByTagName('head')[0];
 

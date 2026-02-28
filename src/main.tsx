@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import App from '@/app/App';
+import ResumePresentationApp from '@/app/resume-presentation-app';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(<App />);
+createRoot(document.getElementById('root')!).render(<ResumePresentationApp />);

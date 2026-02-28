@@ -1,5 +1,5 @@
 ﻿import { useEffect } from 'react';
-import { resumeContent } from '@/app/data/resume-content';
+import { resumeContent } from '@/app/data/resume-data';
 
 interface TitleBlockProps {
   className: string;
@@ -70,7 +70,7 @@ function supportsWebGL() {
   }
 }
 
-export default function App() {
+export default function ResumePresentationApp() {
   const content = resumeContent.ru;
   const frontend = content.skills.groups.find((group) => group.title === 'Frontend');
   const backend = content.skills.groups.find((group) => group.title === 'Backend');
@@ -99,7 +99,7 @@ export default function App() {
       stylesheet.id = styleId;
       stylesheet.rel = 'stylesheet';
       stylesheet.type = 'text/css';
-      stylesheet.href = `/vaalentin/${mode}/main.css`;
+      stylesheet.href = `/presentation-runtime/${mode}/main.css`;
       document.head.appendChild(stylesheet);
 
       const script = document.createElement('script');
@@ -107,7 +107,7 @@ export default function App() {
       script.type = 'text/javascript';
       script.async = false;
       script.defer = false;
-      script.src = `/vaalentin/${mode}/bundle.js`;
+      script.src = `/presentation-runtime/${mode}/bundle.js`;
       document.body.appendChild(script);
     }
   }, []);
