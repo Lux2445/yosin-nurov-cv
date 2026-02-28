@@ -9507,7 +9507,7 @@ var _gsScope =
             ((d = i.clientY),
             (m = i.clientX),
             (x = e.timeStamp),
-            D.test(u.tagName) || e.preventDefault(),
+            D.test(u.tagName) || (e.cancelable && e.preventDefault()),
             e.type)
           ) {
             case c:
@@ -9519,7 +9519,10 @@ var _gsScope =
                 (y = x));
               break;
             case f:
-              (D.test(u.tagName) && t.activeElement !== u && e.preventDefault(),
+              (D.test(u.tagName) &&
+                t.activeElement !== u &&
+                e.cancelable &&
+                e.preventDefault(),
                 (v = d - g),
                 (b = x - _),
                 at.setScrollTop($t - v, !0),
